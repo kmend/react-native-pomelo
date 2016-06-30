@@ -19,7 +19,6 @@ import Pomelo from 'react-native-pomelo';
 ```
 
 import Pomelo from 'react-native-pomelo';
-let route = 'gate.gateHandler.queryEntry';
 let uid = "uid";
 let rid = "rid";
 let username = "username";
@@ -29,7 +28,7 @@ Pomelo.init({
 	port: 3014,
 	log: true
 }, function() {
-	Pomelo.request(route, {
+	Pomelo.request('gate.gateHandler.queryEntry', {
 		uid: uid
 	}, function(data) {
 		Pomelo.disconnect();
@@ -38,8 +37,7 @@ Pomelo.init({
 			port: data.port,
 			log: true
 		}, function() {
-			let route = "connector.entryHandler.enter";
-			Pomelo.request(route, {
+			Pomelo.request("connector.entryHandler.enter", {
 				username: username,
 				rid: rid
 			}, function(data) {
@@ -50,10 +48,9 @@ Pomelo.init({
 });
 
 function chatSend() {
-	let route = "chat.chatHandler.send";
 	let target = "*";
 	let msg = "msg"
-	Pomelo.request(route, {
+	Pomelo.request("chat.chatHandler.send", {
 		rid: rid,
 		content: msg,
 		from: username,
