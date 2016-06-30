@@ -1,21 +1,25 @@
 # react-native-pomelo
 
-#Usage
- 
+Pomelo 在 React-Native WebSocket 的简化封装，实现基本通信功能。参考 [pomelo-cocos2d-js](https://github.com/NetEase/pomelo-cocos2d-js) 
+
+服务器使用 WebSocket 版本  参考   [chatofpomelo-websocket](https://github.com/NetEase/chatofpomelo-websocket)
+
+需要添加protobuf压缩的     参考  [pomelo-protobuf](https://github.com/pomelonode/pomelo-protobuf)
+
 ```
 npm install react-native-pomelo --save
 ```
 
 ```
-
 import Pomelo from 'react-native-pomelo';
 
 ```
 
-simple chat test  
+一个栗子
 
 ```
 
+import Pomelo from 'react-native-pomelo';
 let route = 'gate.gateHandler.queryEntry';
 let uid = "uid";
 let rid = "rid";

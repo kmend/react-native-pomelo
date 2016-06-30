@@ -82,8 +82,6 @@ function reset() {
  */
 function connect(params, url, cb){
 
-    console.log( "connect ====================="  );
-
     params = params || {};
     reconnectUrl = url;
     handshakeBuffer.sys.protoVersion = protoVersion;
@@ -104,10 +102,10 @@ function connect(params, url, cb){
 
     };
     var onerror = function(event) {
-        console.log('socket error: ');
+        //console.log('socket error: ');
     };
     var onclose = function(event) {
-        console.log('socket close: ', reconnectAttempts < maxReconnectAttempts, reconnectionDelay);
+
         if(reconnect && reconnectAttempts < maxReconnectAttempts) {
 
             reconnectAttempts++;
@@ -387,7 +385,7 @@ function disconnect () {
     if(socket) {
         if(socket.disconnect) socket.disconnect();
         if(socket.close) socket.close();
-        console.log('disconnect');
+        //console.log('disconnect');
         socket = null;
     }
     if(heartbeatId) {
